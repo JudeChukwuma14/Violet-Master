@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoga Studio Template">
+    <meta name="keywords" content="Yoga, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Violet | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    {{>header}}
+    <!-- Product Page Section Beign -->
+    <section class="product-page">
+        <div class="container py-4">
+            <form action="/post-product" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div> <label for="">Product Name</label></div>
+                        <div><input type="text" placeholder="Product Name" class="form-control" name="productName">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div> <label for="">Product Price</label></div>
+                        <div><input type="Number" placeholder="Product Price" class="form-control" name="price"></div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div> <label for="">Product Tag</label></div>
+                        <div><input type="text" placeholder="man, shirt, etc" class="form-control" name="tags"></div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div> <label for="">Product Category</label></div>
+                        <div>
+                            <select id="" class="form-control" name="category">
+                                <option value="" selected disabled>Choose any Category</option>
+                                <option value="Dresses">Dresses</option>
+                                <option value="Bags">Bags</option>
+                                <option value="Shoes">Shoes</option>
+                                <option value="Accessories">Accessories</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div> <label for="">Product description</label></div>
+                        <div><textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div>
+                            <label for="">Product Images</label>
+                        </div>
+                        <div>
+                            
+                            <input type="file" name="images" id="" accept="image/jpeg, image/jpg, image/png, image/webp," multiple>
+                        </div>
+                        <div class="col-lg-6 mb-4 d-flex align-items-center justify-content-center ">
+                            <div><button type="submit" class="btn btn-primary mt-5">Submit</button> </div>
+                        </div>
+                    </div>
+
+            </form>
+        </div>
+    </section>
+    <!-- Product Page Section End -->
+
+
+    <!-- Footer Section Begin -->
+    {{>footer}}
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        let successMessage = "{{success}}"
+        let errorMessage = "{{error}}"
+        if(successMessage){
+            Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: successMessage,
+        });
+        }
+        if(errorMessage){
+            Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: errorMessage,
+        });
+        }
+    </script>
+</body>
+
+</html>
